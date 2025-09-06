@@ -1,6 +1,6 @@
 
 /**
- * ZtoApi - OpenAI兼容API代理服务器
+ * Z2Api - OpenAI兼容API代理服务器
  * 
  * 功能概述：
  * - 为 Z.ai 的 GLM-4.5 模型提供 OpenAI 兼容的 API 接口
@@ -16,9 +16,9 @@
  * - Server-Sent Events (SSE) 流式传输
  * - 支持 Deno Deploy 和自托管部署
  * 
- * @author ZtoApi Team
- * @version 2.0.0
- * @since 2024
+ * @author Z2Api Team & 上玄sxuan
+ * @version 2.0.1
+ * @since 2025
  */
 declare namespace Deno {
   interface Conn {
@@ -1003,7 +1003,7 @@ function getIndexHTML(): string {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZtoApi - OpenAI兼容API代理</title>
+    <title>Z2Api - OpenAI兼容API代理</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -1115,7 +1115,7 @@ function getIndexHTML(): string {
 <body>
     <div class="container">
         <header>
-            <h1>ZtoApi</h1>
+            <h1>Z2Api</h1>
             <div class="subtitle">OpenAI兼容API代理 for Z.ai GLM-4.5</div>
             <p>一个高性能、易于部署的API代理服务，让你能够使用OpenAI兼容的格式访问Z.ai的GLM-4.5模型。</p>
         </header>
@@ -1182,7 +1182,7 @@ function getIndexHTML(): string {
         </div>
         
         <footer>
-            <p>© 2024 ZtoApi. Powered by Deno & Z.ai GLM-4.5</p>
+            <p>© 2025 Z2Api. Powered by Deno & Z.ai GLM-4.5 & 上玄sxuan</p>
         </footer>
     </div>
 </body>
@@ -2083,7 +2083,7 @@ return `<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZtoApi 文档</title>
+<title>Z2Api 文档</title>
 <style>
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -2239,7 +2239,7 @@ return `<!DOCTYPE html>
 </head>
 <body>
 <div class="container">
-    <h1>ZtoApi 文档</h1>
+    <h1>Z2Api 文档</h1>
     
     <div class="toc">
         <h2>目录</h2>
@@ -2260,10 +2260,7 @@ return `<!DOCTYPE html>
     <section id="overview">
         <h2>概述</h2>
         <p>这是一个为Z.ai GLM-4.5模型提供OpenAI兼容API接口的代理服务器。它允许你使用标准的OpenAI API格式与Z.ai的GLM-4.5模型进行交互，支持流式和非流式响应。</p>
-        <p><strong>基础URL:</strong> <code>http://localhost:9090/v1</code></p>
-        <div class="note">
-            <strong>注意:</strong> 默认端口为9090，可以通过环境变量PORT进行修改。
-        </div>
+        <p><strong>基础URL:</strong> <code>https://zapi.sxuan.top/v1</code></p>
     </section>
     
     <section id="authentication">
@@ -2402,7 +2399,7 @@ import openai
 # 配置客户端
 client = openai.OpenAI(
 api_key="your-api-key",  # 对应 DEFAULT_KEY
-base_url="http://localhost:9090/v1"
+base_url="https://zapi.sxuan.top/v1"
 )
 
 # 非流式请求 - 使用GLM-4.5
@@ -2431,7 +2428,7 @@ if chunk.choices[0].delta.content:
             <h3>cURL示例</h3>
             <div class="example">
 # 非流式请求
-curl -X POST http://localhost:9090/v1/chat/completions \
+curl -X POST https://zapi.sxuan.top/v1/chat/completions \
 -H "Content-Type: application/json" \
 -H "Authorization: Bearer your-api-key" \
 -d '{
@@ -2441,7 +2438,7 @@ curl -X POST http://localhost:9090/v1/chat/completions \
 }'
 
 # 流式请求
-curl -X POST http://localhost:9090/v1/chat/completions \
+curl -X POST https://zapi.sxuan.top/v1/chat/completions \
 -H "Content-Type: application/json" \
 -H "Authorization: Bearer your-api-key" \
 -d '{
@@ -2457,7 +2454,7 @@ curl -X POST http://localhost:9090/v1/chat/completions \
 const fetch = require('node-fetch');
 
 async function chatWithGLM(message, stream = false) {
-const response = await fetch('http://localhost:9090/v1/chat/completions', {
+const response = await fetch('https://zapi.sxuan.top/v1/chat/completions', {
 method: 'POST',
 headers: {
   'Content-Type': 'application/json',
